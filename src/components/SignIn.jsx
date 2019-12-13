@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Form, Button, Col} from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
+
 
 
 
 const SERVER_URL = "http://localhost:3000/user/token";
 
 class SignIn extends Component {
+    
     constructor() {
+        
         super();
         this.state = { 
             email: '',
@@ -16,6 +20,7 @@ class SignIn extends Component {
             errorMessage: ''
          }
     }
+    
     _handleSubmit = event => {
         event.preventDefault();
     axios.post(SERVER_URL, {
@@ -27,7 +32,7 @@ class SignIn extends Component {
         localStorage.setItem("jwt", res.data.jwt)
         console.log(res.data);
         console.log("user logged in");
-        this.props.history.push('/') 
+        this.props.history.push("/Products");
       })
       .catch( err => {
         this.setState({ errorMessage: 'Invalid email or password'});
@@ -62,10 +67,11 @@ class SignIn extends Component {
                 <Form.Control type="password" placeholder="Password" required onInput={this._handleInputPassword} />
               </Form.Group>
             </Form.Row>
-    
+            
             <Button id="loginButton" type="submit" onClick={this._handleSubmit} >
               Sign In
             </Button>
+            
     
           </Form>
           </div>

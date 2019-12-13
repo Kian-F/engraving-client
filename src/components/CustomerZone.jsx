@@ -3,7 +3,9 @@ import SignIn from './SignIn';
 import Nav from './Nav';
 
 
+
 class CustomerZone extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {  }
@@ -12,7 +14,8 @@ class CustomerZone extends Component {
         return ( 
             <div>
                 <Nav/>
-                <SignIn/>
+                <SignIn history={this.props.history}/>
+
                 <h1>customerzone</h1>
             </div>
          );

@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
-import {DropdownButton, Navbar} from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
 import SignIn from './SignIn';
 
 
