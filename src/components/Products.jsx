@@ -3,6 +3,7 @@ import axios from 'axios';
 import Nav from './Nav';
 import NavbarCollapse from 'react-bootstrap/NavbarCollapse';
 
+
 const SERVER_URL = "http://localhost:3000/products/index";
 
 class Products extends Component {

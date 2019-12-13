@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Form, Button, Col} from 'react-bootstrap';
+import {withRouter} from 'react-router-dom';
 
 
-const SERVER_URL = "http://localhost:3000/users/index";
+
+const SERVER_URL = "http://localhost:3000/user/token";
 
 class SignIn extends Component {
     constructor() {
@@ -28,7 +30,6 @@ class SignIn extends Component {
         this.props.history.push('/') 
       })
       .catch( err => {
-        window.alert("Invalid email and/or password");
         this.setState({ errorMessage: 'Invalid email or password'});
       })
     }
@@ -44,10 +45,12 @@ class SignIn extends Component {
 
     render() {
         return (
+        <div>
+            <h3>Already a Customer</h3>
           <Form id="login">
     
             <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Group as={Col} controlId="formBasicEmail">
                 <Form.Label>Email:</Form.Label>
                 <Form.Control type="email" placeholder="Enter Email" required onInput={this._handleInputEmail}/>
               </Form.Group>
@@ -60,11 +63,12 @@ class SignIn extends Component {
               </Form.Group>
             </Form.Row>
     
-            <Button type="submit" onClick={this._handleSubmit} >
-              Log In
+            <Button id="loginButton" type="submit" onClick={this._handleSubmit} >
+              Sign In
             </Button>
     
           </Form>
+          </div>
         );
       }
 }

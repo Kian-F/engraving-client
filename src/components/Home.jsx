@@ -13,6 +13,7 @@ class Home extends Component {
            
            <Products/>
            <h1>Hi From Home</h1>
+           
         </div> );
     }
 }

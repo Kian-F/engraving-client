@@ -23,16 +23,11 @@ const Nav = (props) => {
                 </li>
                  
                  <li className="nav-item ml-2">
+                     <Link to="/CustomerZone" className="nav-link">
+                         Customer Zone
+                     </Link>
                 <div id="bootstrap-override">
-                <DropdownButton
-                  alignRight
-                  variant="outline-primary"
-                  className="dropdown"
-                  id="dropdown-item-button"
-                  title="Log In"
-                >
-                <SignIn/>
-                </DropdownButton>
+               
             </div>
           </li>
           </ul>

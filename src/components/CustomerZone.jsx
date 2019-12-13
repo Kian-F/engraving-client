@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SignIn from './SignIn';
+import Nav from './Nav';
 
 
 class CustomerZone extends Component {
@@ -10,6 +11,7 @@ class CustomerZone extends Component {
     render() { 
         return ( 
             <div>
+                <Nav/>
                 <SignIn/>
                 <h1>customerzone</h1>
             </div>
