@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SignIn from './SignIn';
 import Nav from './Nav';
+import SignUp from './SignUp';
 
 
 
@@ -15,6 +16,7 @@ class CustomerZone extends Component {
             <div>
                 <Nav/>
                 <SignIn history={this.props.history}/>
+                <SignUp history={this.props.history}/>
 
                 <h1>customerzone</h1>
             </div>

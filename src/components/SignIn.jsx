@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Form, Button, Col} from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
 import {Link} from 'react-router-dom';
-
+import SignUp from './SignUp'
 
 
 
@@ -74,6 +74,7 @@ class SignIn extends Component {
             
     
           </Form>
+          
           </div>
         );
       }
