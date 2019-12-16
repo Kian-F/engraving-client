@@ -3,8 +3,8 @@ import axios from 'axios';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
 
-
 const SERVER_URL = "http://localhost:3000/products/index";
+const IMAGE_URL = "http://localhost:3000/";
 
 class Product extends Component {
     constructor(props) {
@@ -50,7 +50,7 @@ class Product extends Component {
                         
                           <CardDeck>
                           <Card>
-                              <Card.Img variant="top" src={product.img_tag} />
+                              <Card.Img variant="top" src={IMAGE_URL + product.img_tag} />
                               <Card.Body>
                                   <Card.Title>Name: {product.name}</Card.Title>
                                   <Card.Text>{product.category}</Card.Text>
