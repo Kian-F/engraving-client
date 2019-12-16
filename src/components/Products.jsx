@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Nav from './Nav';
-import NavbarCollapse from 'react-bootstrap/NavbarCollapse';
+import Product from './Product';
 
 
 const SERVER_URL = "http://localhost:3000/products/index";
@@ -17,7 +17,8 @@ class Products extends Component {
 
      fetchProducts () {
         axios.get(SERVER_URL).then((res) => {
-            console.log(res.data[0].name);
+            //console.log(res.data[0].name);
+            console.log(res);
             const allProducts = res.data;
             this.setState({products: allProducts})
 
@@ -39,6 +40,7 @@ class Products extends Component {
            
             <div>
                 <Nav/>
+                <Product/>
                 <h1>Hi From Products</h1>
                 </div>
          );
