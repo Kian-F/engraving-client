@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
+import {Link} from 'react-router-dom';
+
 
 const SERVER_URL = "http://localhost:3000/products/index";
 const IMAGE_URL = "http://localhost:3000/";
@@ -11,8 +13,7 @@ class Product extends Component {
         super(props);
         this.state = { 
             products: [],
-            categories: [],
-
+            material: ''
          }
     }
 
@@ -22,14 +23,10 @@ class Product extends Component {
            const allProducts = res.data;
            //this.setState({product: []});
            this.setState({products: res.data});
-            // const aProduct = [...new Set(allProducts.map(pro => pro.name))]
-            // console.log(aProduct);
-            
+           this.setState({material: res.data.id});
 
-            const categories = [...new Set(allProducts.map(pro => pro.category))]
-            console.log(categories);
-            this.setState({categories: categories});
-            
+            // const aProduct = [...new Set(allProducts.map(pro => pro.name))]
+            // console.log(aProduct);  
            
         })
         
@@ -37,7 +34,16 @@ class Product extends Component {
     componentDidMount(){
         this.fetchProducts();
     }
-
+   _handleClick = event => {
+    event.preventDefault();
+    axios.get(SERVER_URL,{
+        product:{name: this.state.name, category: this.state.category}
+    }).then(res =>{
+        console.log(this.state.material);
+        
+    }).catch(error => {console.log(error);
+    });
+   }
 
     render() {
         return (
@@ -53,11 +59,14 @@ class Product extends Component {
                               <Card.Img variant="top" src={IMAGE_URL + product.img_tag} />
                               <Card.Body>
                                   <Card.Title>Name: {product.name}</Card.Title>
-                                  <Card.Text>{product.category}</Card.Text>
-                                  <Card.Text>{product.price}</Card.Text>
-                                  <Card.Text>{product.material}</Card.Text>
-                                  <Card.Text>{product.fixing_method}</Card.Text>
-                                  <Card.Text>{product.height}</Card.Text>
+                                  <Card.Text>Category: {product.category}</Card.Text>
+                                  <Card.Text>Price: ${product.price}</Card.Text>
+                                  <Card.Text>Material: {product.material}</Card.Text>
+                                  <Card.Text>Fixin Method: {product.fixing_method}</Card.Text>
+                                  <Card.Text>Shape: {product.shape}</Card.Text>
+                                  <Card.Text>Height: {product.height}</Card.Text>
+                                  <Card.Text>Width: {product.width}</Card.Text>
+                                  <Link to="/DesignPage"><button onClick={this._handleClick}>Design Me</button></Link> 
                               </Card.Body>
                           </Card>
                   </CardDeck>
