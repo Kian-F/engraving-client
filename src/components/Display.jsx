@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Product from './Product';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios'
-
+import Editor from './Editor';
 const SERVER_URL = "http://localhost:3000/products/";
 const IMAGE_URL = "http://localhost:3000/";
 
@@ -36,10 +36,9 @@ class Display extends Component {
         return (
             <div className="card card-content">
                 <div className="container-lg">
-                    <Card.Img variant="top" src={IMAGE_URL + this.state.product.img_tag} />
-
-                    <div>{this.props.design}</div>
-
+                    <Card.Img variant="top" src={IMAGE_URL + this.state.product.img_tag}  />
+                    <Editor value={this.state.editorHtml}/>
+                   
                 </div>
             </div>
         )

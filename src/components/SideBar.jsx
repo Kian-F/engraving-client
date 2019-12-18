@@ -45,7 +45,7 @@ class SideBar extends Component {
       </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="1">
-                        <Card.Body><Editor /></Card.Body>
+                        <Card.Body className="editor"><Editor /></Card.Body>
                     </Accordion.Collapse>
                 </Card>
             </Accordion>

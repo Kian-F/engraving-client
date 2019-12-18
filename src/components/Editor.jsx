@@ -68,10 +68,17 @@ Quill.register(Font, true);
 class Editor extends React.Component {
   state = { editorHtml: "" };
 
-  handleChange = html => {
-    this.setState({ editorHtml: html });
+  handleChange = e => {
+    this.setState({ editorHtml: e });
+    console.log(this.state);
+    
   };
-
+ handleSubmit = html =>{
+   html.preventDefault();
+   const post ={
+     body: this.state.body
+   }
+ }
   static modules = {
     toolbar: {
       container: "#toolbar",
@@ -109,6 +116,7 @@ class Editor extends React.Component {
           modules={Editor.modules}
           formats={Editor.formats}
         />
+         {<input type="text"  value={this.state.editorHtml}/> }
       </div>
     );
   }

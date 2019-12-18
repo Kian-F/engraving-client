@@ -9,6 +9,13 @@ class DesignPage extends Component {
         
         this.state = {  }
     }
+
+    _textHandler =(event) =>{
+        this.setState({
+            
+        })
+
+    }
     render() { 
         console.log(this.props.match);
         return ( 
