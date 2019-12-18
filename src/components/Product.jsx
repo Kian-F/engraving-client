@@ -3,6 +3,7 @@ import axios from 'axios';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
 import {Link} from 'react-router-dom';
+import Display from './Display';
 
 
 const SERVER_URL = "http://localhost:3000/products/index";
@@ -11,15 +12,17 @@ const IMAGE_URL = "http://localhost:3000/";
 class Product extends Component {
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = { 
             products: [],
+            name: '',
             material: ''
          }
     }
 
      fetchProducts () {
         axios.get(SERVER_URL).then((res) => {
-            console.log(res.data);
+            //console.log(res.data);
            const allProducts = res.data;
            //this.setState({product: []});
            this.setState({products: res.data});
@@ -37,9 +40,11 @@ class Product extends Component {
    _handleClick = event => {
     event.preventDefault();
     axios.get(SERVER_URL,{
-        product:{name: this.state.name, category: this.state.category}
+        //product:{name: this.state.name, category: this.state.category}
     }).then(res =>{
-        console.log(this.state.material);
+        this.setState({
+           
+        })
         
     }).catch(error => {console.log(error);
     });
@@ -54,7 +59,7 @@ class Product extends Component {
                     //     <p> Fixing Method:{product.fixing_method}</p> <p>Material:{product.material}</p> 
                     //     <p>Height:{product.height}</p>
                         
-                          <CardDeck>
+                          <CardDeck >
                           <Card>
                               <Card.Img variant="top" src={IMAGE_URL + product.img_tag} />
                               <Card.Body>
@@ -66,14 +71,16 @@ class Product extends Component {
                                   <Card.Text>Shape: {product.shape}</Card.Text>
                                   <Card.Text>Height: {product.height}</Card.Text>
                                   <Card.Text>Width: {product.width}</Card.Text>
-                                  <Link to="/DesignPage"><button onClick={this._handleClick}>Design Me</button></Link> 
+                                  <Link to={"/DesignPage/" + product.id}><button >Design Me</button></Link> 
                               </Card.Body>
                           </Card>
                   </CardDeck>
-                //   </p>
-              
+                
+                
              ))}
+           
             </div>
+             
          );
     }
 }

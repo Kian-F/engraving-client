@@ -12,7 +12,7 @@ const Routes =(
         <Route exact path ="/" component={Home}/> 
         <Route exact path ="/Products" component={Products}/>
         <Route exact path ="/CustomerZone" component={CustomerZone}/>
-        <Route exact path ="/DesignPage" component={DesignPage}/>
+        <Route  path ="/DesignPage/:design" component={DesignPage}/>
         </div>
     </Router>
 );

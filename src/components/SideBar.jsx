@@ -3,6 +3,7 @@ import { Accordion, Card, Button } from 'react-bootstrap';
 import Editor from './Editor'
 
 
+
 const SERVER_URL = "http://localhost:3000/products/index";
 
 
@@ -17,6 +18,7 @@ class SideBar extends Component {
     
     render() {
         return (<div>
+            
             <Accordion className="according" defaultActiveKey="0">
                 <Card>
                     <Card.Header>

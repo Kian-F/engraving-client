@@ -18,12 +18,12 @@ class Products extends Component {
      fetchProducts () {
         axios.get(SERVER_URL).then((res) => {
             //console.log(res.data[0].name);
-            console.log(res);
+           // console.log(res);
             const allProducts = res.data;
             this.setState({products: allProducts})
 
             const categories = [...new Set(allProducts.map(pro => pro.category))]
-            console.log(categories);
+            //console.log(categories);
             this.setState({categories: categories});
             
            

@@ -42,7 +42,6 @@ class SignUp extends Component {
         event.preventDefault();
         this.createUser();
         this.props.history.push('/Products');
-        
 
     }
 
