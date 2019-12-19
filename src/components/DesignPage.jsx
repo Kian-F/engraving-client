@@ -7,14 +7,21 @@ class DesignPage extends Component {
         super(props);
         console.log(props);
         
-        this.state = {  }
+        this.state = { 
+            text: '',
+            textSize: ''
+         }
     }
 
-    _textHandler =(event) =>{
+    _textHandler =(text) =>{
         this.setState({
-            
+            text: text
         })
 
+    }
+    
+    _sizeHandler = (size) =>{
+        this.setState({textSize: size})   
     }
     render() { 
         console.log(this.props.match);
@@ -27,11 +34,11 @@ class DesignPage extends Component {
                 
                 <div className="row">
                 <div className="col-lg-5">
-                <SideBar/>
+                <SideBar handleTextInput={this._textHandler} handleSize={this._sizeHandler}/>
             </div>
             <div className="col-lg-6">
                 
-            {this.props.match ? <Display design={this.props.match.params.design}/> : ''}
+            {this.props.match ? <Display size={this.state.textSize} design={this.props.match.params.design} text={this.state.text}/> : '' }
             </div>
             </div>
             </div>

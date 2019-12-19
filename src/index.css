@@ -60,3 +60,13 @@ nav {
 .editor{
   height: 250px;
 }
+
+.editorText{
+  text-align: center;
+    z-index: 200;
+    position: absolute;
+    bottom: 136px;
+    left: 0;
+    right: 0;
+    opacity:0;
+}

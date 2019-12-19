@@ -11,10 +11,16 @@ class SideBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Shapes:''
+            Shapes:'',
+            inputText:''
         }
     }
 
+    // handleTextInput = (text) => {
+    //     this.setState({ inputText: text}); 
+    //     //console.log(this.state.inputText);
+        
+    // }
     
     render() {
         return (<div>
@@ -45,8 +51,9 @@ class SideBar extends Component {
       </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="1">
-                        <Card.Body className="editor"><Editor /></Card.Body>
+                        <Card.Body className="editor"><Editor onTextSubmit={this.props.handleTextInput} onSizeChange={this.props.handleSize}/></Card.Body>
                     </Accordion.Collapse>
+                    
                 </Card>
             </Accordion>
             
