@@ -4,6 +4,8 @@ import Editor from './Editor'
 
 
 
+
+
 const SERVER_URL = "http://localhost:3000/products/index";
 
 
@@ -18,7 +20,7 @@ class SideBar extends Component {
 
     // handleTextInput = (text) => {
     //     this.setState({ inputText: text}); 
-    //     //console.log(this.state.inputText);
+    //     console.log(this.state.inputText);
         
     // }
     
@@ -53,6 +55,7 @@ class SideBar extends Component {
                     <Accordion.Collapse eventKey="1">
                         <Card.Body className="editor"><Editor onTextSubmit={this.props.handleTextInput} onSizeChange={this.props.handleSize}/></Card.Body>
                     </Accordion.Collapse>
+                    
                     
                 </Card>
             </Accordion>

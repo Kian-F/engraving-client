@@ -4,7 +4,8 @@ import Card from 'react-bootstrap/Card';
 import axios from 'axios'
 import Editor from './Editor';
 import SideBar from './SideBar';
-import { Z_TEXT } from 'zlib';
+import "../index.css"
+
 
 const SERVER_URL = "http://localhost:3000/products/";
 const IMAGE_URL = "http://localhost:3000/";
@@ -13,7 +14,7 @@ const IMAGE_URL = "http://localhost:3000/";
 class Display extends Component {
     constructor(props) {
         super(props);
-
+        console.log(props);
         this.state = {
             product: '',
             inputText:'',
@@ -33,16 +34,16 @@ class Display extends Component {
     componentDidMount() {
         this.fetchProduct();
     }
-
+    //callback function for passing text from Editor to Display
     handleTextInput = (text) => {
         this.setState({ inputText: text}); 
-       // console.log(this.state.inputText);
+        // console.log(this.state.inputText);
         
     }
     
-    // handleTextSize =(size) =>{
-    //     this.setState({inputSize: size})
-    // }
+    handleTextSize =(size) =>{
+        this.setState({inputSize: size})
+    }
     
 
 
@@ -59,12 +60,11 @@ class Display extends Component {
         return (
             <div className="card card-content">
                 <div className="container-lg">
-                {/* <Editor onTextSubmit={this.handleTextInput} /> */}
+                {/* <Editor onTextSubmit={this.props.handleTextInput}/> */}
+                
                 <div>
                     <Card.Img variant="top" src={IMAGE_URL + this.state.product.img_tag} value={this.props.text}/>
-        <div className="editorText"  > {this.props.text} </div> 
-                    
-                    
+                    <div className="editorText"  > {this.props.text} </div> 
                     </div>
                 </div>
             </div>
@@ -74,3 +74,13 @@ class Display extends Component {
 export default Display;
 
 {/* <textarea type="text" value={this.props.text}/> */}
+
+// const divStyle = () => {
+//     let size = '1em'
+//     if (this.props.size === "small")  {
+//         size = '2em'
+//     } else {
+//         size = "3em"
+//     }
+//     return size;
+// }

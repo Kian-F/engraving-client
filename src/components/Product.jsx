@@ -4,6 +4,7 @@ import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
 import {Link} from 'react-router-dom';
 import Display from './Display';
+import {Container, Row, Col} from 'react-bootstrap'
 
 
 const SERVER_URL = "http://localhost:3000/products/index";
@@ -52,16 +53,17 @@ class Product extends Component {
 
     render() {
         return (
-
-            <div className="productGrid">
+           
+           
+            <Row>
                 {this.state.products.map((product, index) => (
                     // <p>Name: {product.name} <p>Price:{product.price}</p> <p>Category:{product.category}</p>
                     //     <p> Fixing Method:{product.fixing_method}</p> <p>Material:{product.material}</p> 
                     //     <p>Height:{product.height}</p>
-                        
-                          <CardDeck >
-                          <Card>
-                              <Card.Img variant="top" src={IMAGE_URL + product.img_tag} />
+                    
+                 <CardDeck className="cardImg" >
+                          <Card >
+                              <Card.Img className="cardImg"variant="top" src={IMAGE_URL + product.img_tag} />
                               <Card.Body>
                                   <Card.Title>Name: {product.name}</Card.Title>
                                   <Card.Text>Category: {product.category}</Card.Text>
@@ -71,16 +73,18 @@ class Product extends Component {
                                   <Card.Text>Shape: {product.shape}</Card.Text>
                                   <Card.Text>Height: {product.height}</Card.Text>
                                   <Card.Text>Width: {product.width}</Card.Text>
-                                  <Link to={"/DesignPage/" + product.id}><button >Design Me</button></Link> 
+                                  <Link to={"/DesignPage/" + product.id}><button id="DesignButton">Design Me</button></Link> 
                               </Card.Body>
                           </Card>
                   </CardDeck>
                 
                 
-             ))}
+                  
+                ))}
+            </Row>
+            
            
-            </div>
-             
+           
          );
     }
 }

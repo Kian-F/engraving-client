@@ -18,7 +18,7 @@ class CustomerZone extends Component {
                 <SignIn history={this.props.history}/>
                 <SignUp history={this.props.history}/>
 
-                <h1>customerzone</h1>
+                <h1></h1>
             </div>
          );
     }

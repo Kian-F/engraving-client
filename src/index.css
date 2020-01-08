@@ -11,6 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.card-deck {
+  margin-left: 23px;
+  margin-right: -12px;
+}
+.card{
+  border: 0px;
+}
 nav {
   padding: 20px 20px;
   display: flex;
@@ -24,6 +33,17 @@ nav {
   width: 500px;
   padding: 10px;
   border: 1px solid;
+}
+
+#DesignButton{
+  width: 150px;
+  background: #009ffd;
+  color: aliceblue;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  /* padding: 10px 25px; */
+  display: inline-block;
+  font-size: 20px;
+  margin-left:19px;
 }
 
 #loginButton{
@@ -45,10 +65,10 @@ nav {
   border: 1px solid;
 }
 
-.productGrid{
+/* .productGrid{
   width: 200px;
   
-}
+} */
 .rect, .oval, .rounded{
   width: 100px;
 }
@@ -58,7 +78,7 @@ nav {
   
 }
 .editor{
-  height: 250px;
+  height: 300px;
 }
 
 .editorText{
@@ -68,5 +88,52 @@ nav {
     bottom: 136px;
     left: 0;
     right: 0;
-    opacity:0;
+    
+}
+.cardImg{
+  width: 300px;
+}
+
+/* Set content for font-families */
+.ql-font-arial,
+.ql-font span[data-value="arial"]::before {
+  font-family: Arial, sans-serif;
+}
+.ql-font-comic-sans,
+.ql-font span[data-value="comic-sans"]::before {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.ql-font-courier-new,
+.ql-font span[data-value="courier-new"]::before {
+  font-family: "Courier New";
+}
+.ql-font-georgia,
+.ql-font span[data-value="georgia"]::before {
+  font-family: Georgia, serif;
+}
+.ql-font-helvetica,
+.ql-font span[data-value="helvetica"]::before {
+  font-family: Helvetica, sans-serif;
+}
+.ql-font-lucida,
+.ql-font span[data-value="lucida"]::before {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Set content for sizes */
+.ql-size-extra-small,
+.ql-size span[data-value="extra-small"]::before {
+  font-size: 13px !important;
+}
+.ql-size-small,
+.ql-size span[data-value="small"]::before {
+  font-size: 14px !important;
+}
+.ql-size-medium,
+.ql-size span[data-value="medium"]::before {
+  font-size: 18px !important;
+}
+.ql-size-large,
+.ql-size span[data-value="large"]::before {
+  font-size: 20px !important;
 }

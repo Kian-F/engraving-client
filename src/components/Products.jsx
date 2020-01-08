@@ -41,7 +41,7 @@ class Products extends Component {
             <div>
                 <Nav/>
                 <Product/>
-                <h1>Hi From Products</h1>
+                <h1></h1>
                 </div>
          );
     }
