@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
-import Editor from './Editor'
+import Editor from './Editor';
+import "../index.css";
 
 
 
@@ -53,7 +54,7 @@ class SideBar extends Component {
       </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey="1">
-                        <Card.Body className="editor"><Editor onTextSubmit={this.props.handleTextInput} onSizeChange={this.props.handleSize}/></Card.Body>
+                        <Card.Body className="editor"><Editor classNamae="editore"onTextSubmit={this.props.handleTextInput} onSizeChange={this.props.handleSize}/></Card.Body>
                     </Accordion.Collapse>
                     
                     

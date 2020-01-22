@@ -7,6 +7,7 @@ import SideBar from './SideBar';
 import "../index.css"
 
 
+
 const SERVER_URL = "http://localhost:3000/products/";
 const IMAGE_URL = "http://localhost:3000/";
 
@@ -17,13 +18,15 @@ class Display extends Component {
         console.log(props);
         this.state = {
             product: '',
-            inputText:'',
-            inputSize:''
+            inputText: '',
+            inputSize: ''
+
         }
+        // console.log(this.state);
     }
 
     fetchProduct() {
-        console.log(this.props.design);
+        // console.log(this.props);
         axios.get(SERVER_URL + this.props.design).then((res) => {
 
             this.setState({ product: res.data })
@@ -36,21 +39,24 @@ class Display extends Component {
     }
     //callback function for passing text from Editor to Display
     handleTextInput = (text) => {
-        this.setState({ inputText: text}); 
-        // console.log(this.state.inputText);
-        
+        this.setState({ inputText: text });
+
+
     }
-    
-    handleTextSize =(size) =>{
-        this.setState({inputSize: size})
+
+    handleTextSize = (size) => {
+        this.setState({ inputSize: size })
     }
-    
+
 
 
     render() {
+        console.log(this.state);
+
+
         const divStyle = () => {
             let size = '1em'
-            if (this.props.size === "small")  {
+            if (this.props.size === "small") {
                 size = '2em'
             } else {
                 size = "3em"
@@ -60,20 +66,29 @@ class Display extends Component {
         return (
             <div className="card card-content">
                 <div className="container-lg">
-                {/* <Editor onTextSubmit={this.props.handleTextInput}/> */}
-                
-                <div>
-                    <Card.Img variant="top" src={IMAGE_URL + this.state.product.img_tag} value={this.props.text}/>
-                    <div className="editorText"  > {this.props.text} </div> 
+
+                    <div className="productDisplay">
+                        {/* <Editor onTextSubmit={this.props.}/> */}
+                        <Card.Img variant="top" src={IMAGE_URL + this.state.product.img_tag} />
+
+                        <div className="canvas">
+                            <div className="editorText" dangerouslySetInnerHTML={{ __html: this.props.text }}></div>
+                            {/* <div className="editorText"  > {this.props.text} </div>  */}
+
+                        </div>
                     </div>
                 </div>
             </div>
+
+
         )
     }
 }
+
 export default Display;
 
-{/* <textarea type="text" value={this.props.text}/> */}
+
+{/* <textarea type="text" value={this.props.text}/> */ }
 
 // const divStyle = () => {
 //     let size = '1em'
