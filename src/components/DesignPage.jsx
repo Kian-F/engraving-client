@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SideBar from './SideBar';
 import Nav from './Nav'
 import Display from './Display';
-import Editor from './Editor';
+import Payment from './Payment';
 
 
 
@@ -57,9 +57,14 @@ class DesignPage extends Component {
             
            
             </div>
+           
             </div>
+            <Payment/>
+            <div type= "button" onClick={this.Payment}>Pay</div>
             </div>
+            
             </div>
+            
         );
     }
 }
