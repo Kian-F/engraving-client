@@ -12,7 +12,6 @@ const IMAGE_URL = "http://localhost:3000/";
 class Product extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       products: [],
       name: "",
@@ -53,9 +52,6 @@ class Product extends Component {
     return (
       <Row>
         {this.state.products.map((product, index) => (
-          // <p>Name: {product.name} <p>Price:{product.price}</p> <p>Category:{product.category}</p>
-          //     <p> Fixing Method:{product.fixing_method}</p> <p>Material:{product.material}</p>
-          //     <p>Height:{product.height}</p>
 
           <CardDeck className="cardImg">
             <Card>
@@ -69,7 +65,7 @@ class Product extends Component {
                 <Card.Text>Category: {product.category}</Card.Text>
                 <Card.Text>Price: ${product.price}</Card.Text>
                 <Card.Text>Material: {product.material}</Card.Text>
-                <Card.Text>Fixin Method: {product.fixing_method}</Card.Text>
+                <Card.Text>Fixing Method: {product.fixing_method}</Card.Text>
                 <Card.Text>Shape: {product.shape}</Card.Text>
                 <Card.Text>Height: {product.height}</Card.Text>
                 <Card.Text>Width: {product.width}</Card.Text>
