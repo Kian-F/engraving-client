@@ -17,7 +17,6 @@ class Products extends Component {
   fetchProducts() {
     axios.get(SERVER_URL).then((res) => {
       //console.log(res.data[0].name);
-      // console.log(res);
       const allProducts = res.data;
       this.setState({ products: allProducts });
 
