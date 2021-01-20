@@ -19,7 +19,7 @@ class SignUp extends Component {
   }
 
   _handleEmailInput = (event) => {
-    this.setState({ email: EventTarget.value });
+    this.setState({ email: event.target.value });
   };
   _handleNameInput = (event) => {
     this.setState({ name: event.target.value });
