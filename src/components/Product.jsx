@@ -52,7 +52,6 @@ class Product extends Component {
     return (
       <Row>
         {this.state.products.map((product, index) => (
-
           <CardDeck className="cardImg">
             <Card>
               <Card.Img

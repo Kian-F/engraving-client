@@ -21,7 +21,7 @@ const Nav = (props) => {
       })
       .then((res) => {
         localStorage.setItem("jwt", res.data.jwt);
-        console.log(res.data);
+        //console.log(res.data);
         console.log("user logged in");
         this.props.history.push("/Products");
       })
