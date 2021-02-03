@@ -1,6 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
-import Display from "./Display";
 import "../index.css";
 import "froala-editor/css/froala_style.min.css";
 import "froala-editor/css/froala_editor.pkgd.min.css";
@@ -60,7 +58,7 @@ class Editor extends React.Component {
   };
 
   render() {
-    console.log(this.state);
+    //console.log(this.state);
 
     return (
       <div>

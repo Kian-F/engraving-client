@@ -37,7 +37,7 @@ class DesignPage extends Component {
             <div className="col-lg-5">
               <SideBar
                 handleTextInput={this._textHandler}
-                handleSize={this._sizeHandler}
+                //handleSize={this._sizeHandler}
               />
             </div>
             <div className="col-lg-6">
@@ -55,7 +55,6 @@ class DesignPage extends Component {
           </div>
           <Payment />
           <div type="button" onClick={this.Payment}>
-            Pay
           </div>
         </div>
       </div>
