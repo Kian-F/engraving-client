@@ -80,13 +80,3 @@ export default Display;
 {
   /* <textarea type="text" value={this.props.text}/> */
 }
-
-// const divStyle = () => {
-//     let size = '1em'
-//     if (this.props.size === "small")  {
-//         size = '2em'
-//     } else {
-//         size = "3em"
-//     }
-//     return size;
-// }
