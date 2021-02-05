@@ -11,8 +11,6 @@ const IMAGE_URL = "http://localhost:3000/";
 
 class Display extends Component {
   constructor(props) {
-    super(props);
-    console.log(props);
     this.state = {
       product: "",
       inputText: "",
@@ -21,14 +19,14 @@ class Display extends Component {
     // console.log(this.state);
   }
 
-  fetchProduct() {
+  fetchProduct = () => {
     // console.log(this.props);
     axios.get(SERVER_URL + this.props.design).then((res) => {
       this.setState({ product: res.data });
     });
   }
   componentDidMount() {
-    this.fetchProduct();
+    fetchProduct();
   }
   //callback function for passing text from Editor to Display
   handleTextInput = (text) => {
@@ -60,7 +58,6 @@ class Display extends Component {
               variant="top"
               src={IMAGE_URL + this.state.product.img_tag}
             />
-
             <div className="canvas">
               <div
                 className="editorText"
